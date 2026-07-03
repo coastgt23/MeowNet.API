@@ -183,7 +183,7 @@ app.UseStaticFiles(new StaticFileOptions
     RequestPath = "",
     ServeUnknownFileTypes = true
 });
-
+//hi
 
 
 app.UseStaticFiles(new StaticFileOptions
@@ -199,7 +199,7 @@ app.MapHub<MeowNet.API.Hubs.GameHub>("/hub/v1");
 // Name server endpoint (root)
 app.MapGet("/", () => 
 {
-    var host = builder.Configuration["Host"] ?? "http://localhost:8080";
+    var host = builder.Configuration["Host"] ?? "https://meownet-api-1.onrender.com";
     var cdnHost = builder.Configuration["CdnHost"] ?? host;
 
     return Results.Ok(new Dictionary<string, string>

@@ -41,8 +41,8 @@ namespace MeowNet.API.Controllers
                 {
                     Subject = new ClaimsIdentity(claims),
                     Expires = DateTime.UtcNow.AddHours(12),
-                    Issuer = "http://localhost:8008",
-                    Audience = "http://localhost:8008",
+                    Issuer = "https://meownet-api-1.onrender.com",
+                    Audience = "https://meownet-api-1.onrender.com",
                     SigningCredentials = creds
                 };
 
