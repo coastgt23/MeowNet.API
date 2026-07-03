@@ -17,5 +17,9 @@ ENV ASPNETCORE_ENVIRONMENT=Production
 EXPOSE 8080
 WORKDIR /app
 COPY --from=build /app .
+
+# Create a writable data directory for SQLite, owned by the app user
+RUN mkdir -p /app/data && chown -R $APP_UID:$APP_UID /app
+
 USER $APP_UID
 ENTRYPOINT [ "dotnet", "MeowNet.API.dll" ]
